@@ -57,6 +57,7 @@ public class threeSpecDraft extends LinearOpMode {
     boolean fifthStepRan = false;
     boolean sixthStepRan = false;
     boolean seventhStepRan = false;
+    boolean eighthStepRan = false;
     public static boolean CP1Aresume = false;
     public static boolean CP1Bresume = false;
     public static boolean CP2Aresume = false;
@@ -276,6 +277,14 @@ public class threeSpecDraft extends LinearOpMode {
             }
 
             if (sixthStepRan){
+                if (CP3Bresume) {
+                    xPower1A = xPower3B;
+                    yPower1A = yPower3B;
+                    hPower1A = hPower3B;
+                }
+            }
+
+            if (seventhStepRan){
                 if (CP4resume) {
                     xPower1A = xPower4;
                     yPower1A = yPower4;
@@ -283,7 +292,7 @@ public class threeSpecDraft extends LinearOpMode {
                 }
             }
 
-            if (seventhStepRan){
+            if (eighthStepRan){
                 if (CP5resume) {
                     xPower1A = xPower5;
                     yPower1A = yPower5;
