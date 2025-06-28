@@ -57,6 +57,17 @@ public class threeSpecDraft extends LinearOpMode {
     boolean fifthStepRan = false;
     boolean sixthStepRan = false;
     boolean seventhStepRan = false;
+    public static boolean CP1Aresume = false;
+    public static boolean CP1Bresume = false;
+    public static boolean CP2Aresume = false;
+    public static boolean CP2Bresume = false;
+    public static boolean CP3Aresume = false;
+    public static boolean CP3Bresume = false;
+    public static boolean CP4resume = false;
+    public static boolean CP5resume = false;
+
+
+
 
 
     PIDFController xPID = new PIDFController(xKp, xKi, xKd, 0);
@@ -224,46 +235,60 @@ public class threeSpecDraft extends LinearOpMode {
 
 
             if (firstStepRan){
-                xPower1A=xPower1B;
-                yPower1A=yPower1B;
-                hPower1A=hPower1B;
+                if (CP1Aresume) {
+                    xPower1A = xPower1B;
+                    yPower1A = yPower1B;
+                    hPower1A = hPower1B;
+                }
             }
 
             if (secondStepRan){
-                xPower1A=xPower2A;
-                yPower1A=yPower2A;
-                hPower1A=hPower2A;
+                if (CP1Bresume) {
+                    xPower1A = xPower2A;
+                    yPower1A = yPower2A;
+                    hPower1A = hPower2A;
+                }
 
             }
 
             if (thirdStepRan){
-                xPower1A=xPower2B;
-                yPower1A=yPower2B;
-                hPower1A=hPower2B;
+                if (CP2Aresume) {
+                    xPower1A = xPower2B;
+                    yPower1A = yPower2B;
+                    hPower1A = hPower2B;
+                }
             }
 
             if (fourthStepRan){
-                xPower1A=xPower3A;
-                yPower1A=yPower3A;
-                hPower1A=hPower3A;
+                if (CP2Bresume) {
+                    xPower1A = xPower3A;
+                    yPower1A = yPower3A;
+                    hPower1A = hPower3A;
+                }
             }
 
             if (fifthStepRan){
-                xPower1A=xPower3B;
-                yPower1A=yPower3B;
-                hPower1A=hPower3B;
+                if (CP3Aresume) {
+                    xPower1A = xPower3B;
+                    yPower1A = yPower3B;
+                    hPower1A = hPower3B;
+                }
             }
 
             if (sixthStepRan){
-                xPower1A=xPower4;
-                yPower1A=yPower4;
-                hPower1A=hPower4;
+                if (CP4resume) {
+                    xPower1A = xPower4;
+                    yPower1A = yPower4;
+                    hPower1A = hPower4;
+                }
             }
 
             if (seventhStepRan){
-                xPower1A=xPower5;
-                yPower1A=yPower5;
-                hPower1A=hPower5;
+                if (CP5resume) {
+                    xPower1A = xPower5;
+                    yPower1A = yPower5;
+                    hPower1A = hPower5;
+                }
             }
 
             driveFieldCentric(xPower1A, -yPower1A, -hPower1A);
@@ -333,10 +358,4 @@ public class threeSpecDraft extends LinearOpMode {
         leftBack.setPower(leftBackPower);
         rightBack.setPower(rightBackPower);
     }
-
-
-
-
-
-
 }
